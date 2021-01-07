@@ -178,9 +178,94 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
+
         {% block main_menu %}
         {{ layout.menu() }}
         {% endblock %}
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>Statistics</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-group"></i>User management</a></li>
+            <li><a href="#"><i class="fa fa-area-chart "></i>Sales Report</a></li>
+            <li><a href="#"><i class="fa fa-pie-chart"></i>Usage Report</a></li>
+            <li><a href="#"><i class="fa fa-heart-o"></i>Features Report</a></li>
+            <li><a href="#"><i class="fa fa-database"></i>Data Report</a></li>
+          </ul>
+
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-group"></i> <span>Users</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-user"></i>User Management</a></li>
+            <li><a href="#"><i class="fa fa-user-secret "></i>User Roles</a></li>
+          </ul>
+
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-object-ungroup"></i> <span>CMS</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-group"></i>Page Managements</a></li>
+            <li><a href="#"><i class="fa fa-area-chart "></i>Plans</a></li>
+            <li><a href="#"><i class="fa fa-pie-chart"></i>Companies</a></li>
+            <li><a href="#"><i class="fa fa-heart-o"></i>Cercles</a></li>
+
+          </ul>
+
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-gears"></i> <span>Settings</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-group"></i>Api Config</a></li>
+            <li><a href="#"><i class="fa fa-area-chart "></i>Currency</a></li>
+            <li><a href="#"><i class="fa fa-area-chart "></i>Seo Url</a></li>
+            <li><a href="#"><i class="fa fa-area-chart "></i>Site Settings</a></li>
+          </ul>
+
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-navicon"></i> <span>Menu</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-group"></i>Create Menu</a></li>
+            <li><a href="#"><i class="fa fa-area-chart "></i>Manage Menu</a></li>
+
+          </ul>
+
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-bug"></i> <span>Complaints</span>
+
+          </a>
+        </li>
+
         <li>
           <a href="#">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
@@ -191,38 +276,10 @@
             </span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class="fa fa-lock"></i> <span>Logout</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
         </li>
       </ul>
     </section>

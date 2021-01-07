@@ -37,7 +37,7 @@ class Circles(db.Model, RoleMixin):
     id = db.Column(db.Integer(), primary_key=True)
     title = db.Column(db.String(200))
     description = db.Column(db.String(2000))
-
+    @app.route("/circle")
     def __str__(self):
         return self.id
 
@@ -127,7 +127,7 @@ class CirclesModelView(sqla.ModelView):
     can_view_details = True
     details_modal = True
 
-
+@app.route('/user')
 class UserView(MyModelView):
     column_editable_list = ['email', 'first_name', 'last_name']
     column_searchable_list = column_editable_list
@@ -153,6 +153,7 @@ class CirclesView(BaseView):
     def index(self):
         return self.render('admin/custom_index.html')
 
+
 class NotesView(BaseView):
     @expose('/')
     def index(self):
@@ -174,14 +175,8 @@ admin = flask_admin.Admin(
 )
 
 # Add model views
-admin.add_view(MyModelView(Role, db.session, menu_icon_type='fa', menu_icon_value='fa-server', name="Roles"))
-admin.add_view(CirclesModelView(Circles, db.session, menu_icon_type='fa', menu_icon_value='fa-server', name="Circles"))
 admin.add_view(UserView(User, db.session, menu_icon_type='fa', menu_icon_value='fa-users', name="Users"))
-admin.add_view(CirclesView(name="Circles", endpoint='Circles', menu_icon_type='fa', menu_icon_value='fa-connectdevelop',))
-admin.add_view(TaskView(name="Task", endpoint='Task', menu_icon_type='fa', menu_icon_value='fa-connectdevelop',))
-admin.add_view(NotesView(name="Notes", endpoint='Notes', menu_icon_type='fa', menu_icon_value='fa-connectdevelop',))
-admin.add_view(CustomView(name="Custom view", endpoint='custom', menu_icon_type='fa', menu_icon_value='fa-connectdevelop',))
-
+#admin.add_view(CirclesModelView(Circles, db.session, menu_icon_type='fa', menu_icon_value='fa-server', name="Circles")
 # define a context processor for merging flask-admin's template context into the
 # flask-security views.
 @security.context_processor
@@ -219,14 +214,11 @@ def build_sample_db():
         )
 
         first_names = [
-            'Harry', 'Amelia', 'Oliver', 'Jack', 'Isabella', 'Charlie', 'Sophie', 'Mia',
-            'Jacob', 'Thomas', 'Emily', 'Lily', 'Ava', 'Isla', 'Alfie', 'Olivia', 'Jessica',
-            'Riley', 'William', 'James', 'Geoffrey', 'Lisa', 'Benjamin', 'Stacey', 'Lucy'
+            'Harry', 'Amelia', 'Oliver', 'Jack', 'Isabella', 'Charlie', 'Sophie', 'Mia'
         ]
         last_names = [
-            'Brown', 'Smith', 'Patel', 'Jones', 'Williams', 'Johnson', 'Taylor', 'Thomas',
-            'Roberts', 'Khan', 'Lewis', 'Jackson', 'Clarke', 'James', 'Phillips', 'Wilson',
-            'Ali', 'Mason', 'Mitchell', 'Rose', 'Davis', 'Davies', 'Rodriguez', 'Cox', 'Alexander'
+            'Brown', 'Smith', 'Patel', 'Jones', 'Williams', 'Johnson', 'Taylor', 'Thomas'
+
         ]
 
         for i in range(len(first_names)):
